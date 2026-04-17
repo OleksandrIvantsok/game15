@@ -1,0 +1,12 @@
+/firm/Samsung
+/firm/Apple
+/firm/Xiaomi
+
+/firm/Nokia
+
+/price/70000
+/price/60000
+/price/50000
+/price/10000
+
+/cheap_cameras
