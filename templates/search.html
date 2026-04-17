@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+Пошук
+{% endblock %}
+
+{% block content %}
+
+<h2>Пошук</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label>Фірма</label>
+        <input name="firm" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Максимальна ціна</label>
+        <input name="price" type="number" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Тип запиту</label>
+        <select name="mode" class="form-control">
+            <option value="firm">По фірмі</option>
+            <option value="price">По ціні</option>
+            <option value="cheap_cameras">Макс камер</option>
+        </select>
+    </div>
+
+    <button class="btn btn-success">Пошук</button>
+
+</form>
+
+{% endblock %}

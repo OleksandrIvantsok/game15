@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+No data
+{% endblock %}
+
+{% block content %}
+
+<h1>Немає данних</h1>
+
+<img src="{{ url_for('static', filename='no_data.png') }}">
+
+<div>
+    <a href="/">Повернутися на головну</a>
+</div>
+
+{% endblock %}

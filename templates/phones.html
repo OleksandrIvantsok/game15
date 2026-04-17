@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+Phones
+{% endblock %}
+
+{% block content %}
+
+<h2>Список телефонів</h2>
+
+{% if phones|length == 0 %}
+    <script>window.location.href="/no_data"</script>
+{% else %}
+
+<table>
+<tr>
+    <th>Виробник</th>
+    <th>Назва</th>
+    <th>Ціна (грн)</th>
+    <th>Кількість камер</th>
+</tr>
+
+{% for phone in phones %}
+<tr>
+    <td>{{ phone.firm }}</td>
+    <td>{{ phone.name }}</td>
+    <td>{{ phone.price }}</td>
+    <td>{{ phone.cameras }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endif %}
+
+{% endblock %}

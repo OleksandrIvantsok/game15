@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if final %}
+
+<h2 class="text-center">{{ final }}</h2>
+
+<p class="text-center">
+Ваші очки: {{ user_score }} | Комп’ютер: {{ comp_score }}
+</p>
+
+<div class="text-center">
+    <a href="/reset_game" class="btn btn-warning">Грати ще раз</a>
+</div>
+
+{% else %}
+
+<h4 class="text-center">Раунд {{ round }} / 15</h4>
+
+<form method="POST" class="text-center">
+
+    <select name="choice" class="form-control mb-3">
+        {% for item in options %}
+        <option value="{{ item }}">{{ item }}</option>
+        {% endfor %}
+    </select>
+
+    <button class="btn btn-success">Хід</button>
+
+</form>
+
+{% if result %}
+
+<hr>
+
+<h4 class="text-center">Комп’ютер: {{ comp }}</h4>
+<h4 class="text-center">{{ result }}</h4>
+
+<p class="text-center">
+Рахунок: {{ user_score }} - {{ comp_score }}
+</p>
+
+{% endif %}
+
+{% endif %}
+
+<!-- Картинка правил -->
+<div class="text-center mb-3">
+    <img src="{{ url_for('static', filename='Правила.png') }}"
+         class="img-fluid" style="max-height:300px;">
+</div>
+
+{% endblock %}
